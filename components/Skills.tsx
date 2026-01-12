@@ -14,7 +14,7 @@ const skillCategories: SkillCategory[] = [
   },
   {
     category: "Frameworks & Tools", 
-    skills: ["React", "Node.js", ".NET MAUI", "Flutter", "MongoDB", "Firebase", "Git", "GCP", "Azure DevOps", "Agile"]
+    skills: ["React", "Node.js", ".NET MAUI", "Flutter", "MongoDB", "Firebase", "Git", "GCP", "Azure DevOps", "Agile", "Android"]
   }
 ];
 
