@@ -81,7 +81,7 @@ export default function Education() {
         }`}
       >
         <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
-          <span className="text-cyan-400">Education</span>
+          My <span className="text-cyan-400">Education</span>
         </h2>
         <p className="text-lg text-slate-300 max-w-2xl mx-auto">
           My academic foundation in computer science and the knowledge that drives my passion for development.
