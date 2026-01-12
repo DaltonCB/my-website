@@ -72,10 +72,10 @@ export default function WorkExperience() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation(0.3);
 
   return (
-    <section id="experience" className="w-full max-w-6xl mx-auto px-4 py-24">
+    <section id="experience" className="w-full max-w-6xl mx-auto px-4 pt-2 pb-8">
       <div 
         ref={headerRef}
-        className={`text-center mb-16 transition-all duration-700 ${
+        className={`text-center mb-8 transition-all duration-700 ${
           headerVisible 
             ? 'opacity-100 transform translate-y-0' 
             : 'opacity-0 transform translate-y-8'

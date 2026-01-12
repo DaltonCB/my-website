@@ -120,16 +120,16 @@ export default function Projects() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation(0.3);
 
   return (
-    <section className="py-16 px-4 max-w-5xl mx-auto" id="projects">
+    <section className="pt-2 pb-8 px-4 max-w-5xl mx-auto" id="projects">
       <div 
         ref={headerRef}
-        className={`text-center mb-12 transition-all duration-700 ${
+        className={`text-center mb-8 transition-all duration-700 ${
           headerVisible 
             ? 'opacity-100 transform translate-y-0' 
             : 'opacity-0 transform translate-y-8'
         }`}
       >
-        <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 bg-gradient-to-r from-indigo-400 via-purple-400 to-sky-400 bg-clip-text text-transparent">
+        <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 bg-gradient-to-r from-indigo-400 via-purple-400 to-sky-400 bg-clip-text text-transparent leading-tight">
           My Projects
         </h2>
         <p className="text-lg text-gray-300 max-w-2xl mx-auto">
