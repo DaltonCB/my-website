@@ -2,38 +2,39 @@
 
 import Image from "next/image";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { GraduationCap, Briefcase, Code2, Layers, Dumbbell } from "lucide-react";
 
 export type AboutItem = {
   title: string;
   description: string;
-  image?: string;
+  icon: React.ComponentType<any>;
 };
 
 const aboutItems: AboutItem[] = [
   {
     title: "Computer Science Student",
     description: "Currently pursuing a Bachelor of Science in Computer Science at Purdue University with a 3.71 GPA, graduating May 2026.",
-    image: "/file.svg",
+    icon: GraduationCap,
   },
   {
     title: "Software Development Co-op",
     description: "Working at UPS developing mobile applications for 30,000+ drivers nationwide using .NET MAUI, C#, and SQL databases.",
-    image: "/globe.svg",
+    icon: Briefcase,
   },
   {
     title: "Full-Stack Developer",
     description: "Experienced in building modern web applications using React, TypeScript, Node.js, and cloud technologies like MongoDB and Firebase.",
-    image: "/window.svg",
+    icon: Code2,
   },
   {
     title: "Full-Stack Enthusiast",
     description: "Passionate about building applications at every level of the stack - from database design and backend APIs to responsive frontend interfaces and mobile applications.",
-    image: "/vercel.svg",
+    icon: Layers,
   },
   {
     title: "Fitness & Wellness",
-    description: "Dedicated to maintaining physical fitness through regular gym sessions and various physical activities. I believe a healthy body supports a sharp mind for coding.",
-    image: "/next.svg",
+    description: "Dedicated to maintaining physical fitness through regular gym sessions and various physical activities. I love playing sports with friends!",
+    icon: Dumbbell,
   },
 ];
 
@@ -53,20 +54,11 @@ function AboutCard({ item, index }: { item: AboutItem; index: number }) {
       }}
     >
       <div className="flex flex-col md:flex-row md:items-start gap-6">
-        {item.image && (
-          <div className="flex-shrink-0 mx-auto md:mx-0">
-            <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center">
-              <Image 
-                src={item.image} 
-                alt={item.title} 
-                width={32} 
-                height={32} 
-                className="brightness-150 contrast-125" 
-                style={{ filter: "invert(56%) sepia(94%) saturate(1546%) hue-rotate(162deg) brightness(101%) contrast(101%)" }}
-              />
-            </div>
+        <div className="flex-shrink-0 mx-auto md:mx-0">
+          <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center">
+            <item.icon className="w-8 h-8 text-cyan-400" />
           </div>
-        )}
+        </div>
         <div className="text-center md:text-left">
           <h3 className="text-2xl font-bold text-white mb-3">{item.title}</h3>
           <p className="text-slate-300 text-lg leading-relaxed">{item.description}</p>
