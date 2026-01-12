@@ -23,13 +23,8 @@ const aboutItems: AboutItem[] = [
   },
   {
     title: "Full-Stack Developer",
-    description: "Experienced in building modern web applications using React, TypeScript, Node.js, and cloud technologies like MongoDB and Firebase.",
+    description: "Experienced in building modern web applications using React, TypeScript, Node.js, and cloud technologies like MongoDB and Firebase. Passionate about building applications at every level of the stack - from database design and backend APIs to responsive frontend interfaces and mobile applications.",
     icon: Code2,
-  },
-  {
-    title: "Full-Stack Enthusiast",
-    description: "Passionate about building applications at every level of the stack - from database design and backend APIs to responsive frontend interfaces and mobile applications.",
-    icon: Layers,
   },
   {
     title: "Fitness & Wellness",
