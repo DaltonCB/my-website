@@ -6,7 +6,7 @@ export default function Contact() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation(0.3);
 
   return (
-    <section id="contact" className="w-full max-w-6xl mx-auto px-4 py-24">
+    <section id="contact" className="w-full max-w-6xl mx-auto px-4 py-6">
       <div 
         ref={headerRef}
         className={`text-center mb-16 transition-all duration-700 ${
