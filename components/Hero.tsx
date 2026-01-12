@@ -31,6 +31,16 @@ export default function Hero() {
           Experience
         </a>
         <a
+          href="#education"
+          className="inline-block px-6 py-3 rounded-lg border-2 border-cyan-400 text-cyan-400 font-semibold hover:border-cyan-300 hover:text-cyan-300 transition-all duration-200"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('education')?.scrollIntoView({ behavior: 'smooth' });
+          }}
+        >
+          Education
+        </a>
+        <a
           href="#projects"
           className="inline-block px-6 py-3 rounded-lg border-2 border-cyan-400 text-cyan-400 font-semibold hover:border-cyan-300 hover:text-cyan-300 transition-all duration-200"
           onClick={(e) => {

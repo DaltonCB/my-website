@@ -33,7 +33,7 @@ const aboutItems: AboutItem[] = [
   },
   {
     title: "Fitness & Wellness",
-    description: "Dedicated to maintaining physical fitness through regular gym sessions and various physical activities. I love playing sports with friends!",
+    description: "Dedicated to maintaining physical fitness through regular gym sessions and various physical activities. I love playing sports with friends, especially intramural volleyball!",
     icon: Dumbbell,
   },
 ];
