@@ -33,7 +33,7 @@ function AboutCard({ item, index }: { item: AboutItem; index: number }) {
   return (
     <div 
       ref={ref}
-      className={`flex flex-col md:flex-row items-center gap-8 bg-white/10 backdrop-blur-lg rounded-xl shadow-lg p-8 hover:bg-white/15 transition-all duration-700 ${
+      className={`bg-slate-800 rounded-xl shadow-lg p-8 hover:bg-slate-700 transition-all duration-700 border-l-4 border-cyan-400 ${
         isVisible 
           ? 'opacity-100 transform translate-y-0' 
           : 'opacity-0 transform translate-y-8'
@@ -42,20 +42,24 @@ function AboutCard({ item, index }: { item: AboutItem; index: number }) {
         transitionDelay: `${index * 200}ms` 
       }}
     >
-      {item.image && (
-        <div className="flex-shrink-0">
-          <Image 
-            src={item.image} 
-            alt={item.title} 
-            width={80} 
-            height={80} 
-            className="rounded-full" 
-          />
+      <div className="flex flex-col md:flex-row md:items-start gap-6">
+        {item.image && (
+          <div className="flex-shrink-0 mx-auto md:mx-0">
+            <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center">
+              <Image 
+                src={item.image} 
+                alt={item.title} 
+                width={32} 
+                height={32} 
+                className="opacity-70" 
+              />
+            </div>
+          </div>
+        )}
+        <div className="text-center md:text-left">
+          <h3 className="text-2xl font-bold text-white mb-3">{item.title}</h3>
+          <p className="text-slate-300 text-lg leading-relaxed">{item.description}</p>
         </div>
-      )}
-      <div className="flex-1 text-center md:text-left">
-        <h3 className="text-2xl font-bold text-indigo-300 mb-3">{item.title}</h3>
-        <p className="text-gray-200 text-lg leading-relaxed">{item.description}</p>
       </div>
     </div>
   );
@@ -97,10 +101,10 @@ export default function About() {
             : 'opacity-0 transform translate-y-8'
         }`}
       >
-        <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 bg-gradient-to-r from-indigo-400 via-purple-400 to-sky-400 bg-clip-text text-transparent">
-          About Me
+        <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
+          About <span className="text-cyan-400">Me</span>
         </h2>
-        <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+        <p className="text-lg text-slate-300 max-w-2xl mx-auto">
           Computer Science student at Purdue University with hands-on experience in software development and a passion for creating impactful applications.
         </p>
       </div>

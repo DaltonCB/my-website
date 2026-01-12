@@ -62,7 +62,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
     <div 
       ref={ref}
-      className={`bg-white/10 backdrop-blur-lg rounded-xl shadow-lg p-6 flex flex-col hover:bg-white/15 transition-all duration-700 hover:scale-105 ${
+      className={`bg-slate-800 rounded-xl shadow-lg p-6 flex flex-col hover:bg-slate-700 transition-all duration-700 hover:scale-105 border-l-4 border-cyan-400 ${
         isVisible 
           ? 'opacity-100 transform translate-y-0' 
           : 'opacity-0 transform translate-y-8'
@@ -74,17 +74,17 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       {project.image && (
         <img src={project.image} alt={project.title} className="w-16 h-16 mb-4 mx-auto" />
       )}
-      <h3 className="text-xl font-semibold mb-3 text-indigo-300 text-center">{project.title}</h3>
-      <p className="text-gray-300 mb-4 text-center leading-relaxed flex-grow">{project.description}</p>
+      <h3 className="text-xl font-semibold mb-3 text-white text-center">{project.title}</h3>
+      <p className="text-slate-300 mb-4 text-center leading-relaxed flex-grow">{project.description}</p>
       
       {project.technologies && (
         <div className="mb-4">
-          <h4 className="text-sm font-semibold text-purple-300 mb-2">Technologies:</h4>
+          <h4 className="text-sm font-semibold text-cyan-400 mb-2">Technologies:</h4>
           <div className="flex flex-wrap gap-1">
             {project.technologies.map((tech, techIndex) => (
               <span 
                 key={techIndex}
-                className="px-2 py-1 bg-indigo-500/20 text-indigo-300 rounded text-xs font-medium border border-indigo-400/30"
+                className="px-2 py-1 bg-cyan-500/20 text-cyan-300 rounded text-xs font-medium border border-cyan-400/30"
               >
                 {tech}
               </span>
@@ -95,8 +95,8 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       
       {project.features && (
         <div className="mb-4">
-          <h4 className="text-sm font-semibold text-purple-300 mb-2">Key Features:</h4>
-          <ul className="text-xs text-gray-300 space-y-1">
+          <h4 className="text-sm font-semibold text-cyan-400 mb-2">Key Features:</h4>
+          <ul className="text-xs text-slate-300 space-y-1">
             {project.features.slice(0, 3).map((feature, featureIndex) => (
               <li key={featureIndex} className="flex items-start gap-1">
                 <span className="text-indigo-400 mt-0.5">•</span>
@@ -109,7 +109,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       
       <div className="mt-auto pt-4">
         {project.link && (
-          <a href={project.link} className="text-indigo-400 hover:underline font-medium">View Project</a>
+          <a href={project.link} className="text-cyan-400 hover:text-cyan-300 font-medium">View Project</a>
         )}
       </div>
     </div>
@@ -129,8 +129,8 @@ export default function Projects() {
             : 'opacity-0 transform translate-y-8'
         }`}
       >
-        <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 bg-gradient-to-r from-indigo-400 via-purple-400 to-sky-400 bg-clip-text text-transparent leading-tight">
-          My Projects
+        <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white leading-tight">
+          My <span className="text-cyan-400">Projects</span>
         </h2>
         <p className="text-lg text-gray-300 max-w-2xl mx-auto">
           Here are some of the projects I've worked on that showcase my skills and passion for development.
