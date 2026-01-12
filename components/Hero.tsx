@@ -2,7 +2,7 @@
 
 export default function Hero() {
   return (
-    <section className="flex flex-col items-center justify-center min-h-[80vh] text-center px-4 py-16">
+    <section className="flex flex-col items-center justify-center min-h-[60vh] text-center px-4 py-4">
       <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 text-white tracking-tight">
         Hello, I'm <span className="text-cyan-400">Dalton Babbs</span>.
       </h1>
@@ -49,6 +49,16 @@ export default function Hero() {
           }}
         >
           Projects
+        </a>
+        <a
+          href="#skills"
+          className="inline-block px-6 py-3 rounded-lg border-2 border-cyan-400 text-cyan-400 font-semibold hover:border-cyan-300 hover:text-cyan-300 transition-all duration-200"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
+          }}
+        >
+          Skills
         </a>
         <a
           href="#contact"
