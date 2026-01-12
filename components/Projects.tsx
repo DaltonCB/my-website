@@ -59,15 +59,14 @@ const projects: Project[] = [
   },
   {
     title: "Personal Portfolio Website", 
-    description: "A modern responsive portfolio website showcasing my development skills and professional experience.",
+    description: "A modern responsive portfolio website showcasing my development skills and professional experience. Thanks for stopping by!",
     detailedDescription: [
-      "Built with Next.js 15 and React 18 for optimal performance and SEO",
+      "Built with Next.js and React for optimal performance",
       "Implemented custom scroll animations using Intersection Observer API",
       "Designed responsive layout with Tailwind CSS supporting all device sizes",
       "Created single-page application with smooth scroll navigation between sections",
       "Integrated TypeScript for type-safe development and better code maintainability",
-      "Deployed with Vercel for fast global content delivery",
-      "Optimized for accessibility and web performance metrics"
+      "Deployed with Vercel for fast global content delivery"
     ],
     image: "/window.svg",
     link: "#",
