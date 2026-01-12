@@ -34,7 +34,8 @@ export default function Contact() {
           <h3 className="text-xl font-semibold text-white mb-2">Email</h3>
           <a 
             href="mailto:daltoncbabbs@yahoo.com" 
-            className="text-slate-300 hover:text-cyan-400 transition-colors text-sm break-all"
+            className="text-slate-300 hover:text-cyan-400 transition-colors text-xs whitespace-nowrap"
+            title="daltoncbabbs@yahoo.com"
           >
             daltoncbabbs@yahoo.com
           </a>

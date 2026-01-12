@@ -15,16 +15,20 @@ const workExperiences: WorkExperience[] = [
     title: "Software Development Intern / Co-op",
     company: "UPS, Inc",
     duration: "June 2025 - Present",
-    description: "Extended from summer internship to 6-month co-op in recognition of exceptional performance. Developed a .NET MAUI Android app used by drivers to manage navigation, job assignments, time logs, and compensation for over 30,000 drivers nationwide. Created front-end interfaces using XAML and implemented backend logic in C# with SQL databases.",
+    description: "",
     technologies: [".NET MAUI", "C#", "XAML", "SQL", "Android", "Agile Scrum"]
   },
 ];
 
-// Additional achievements section
+// Bulleted achievements from resume
 const achievements = [
-  "Refactored over 100 unit tests and resolved bugs across critical applications",
-  "Led a team of 6 interns in company-wide hackathon training AI model with BigQuery ML",
-  "Collaborated across teams to ensure DOT compliance and reduce operational risk"
+  "Extended from summer internship to 6-month co-op in recognition of exceptional performance",
+  "Developed a .NET MAUI Android app used by drivers to manage navigation, job assignments, time logs, and compensation for over 30,000 drivers nationwide",
+  "Created front-end interfaces using XAML to improve driver satisfaction when using mobile work app and implemented backend logic in C# with SQL databases to provide accurate accounting of driver statistics",
+  "Refactored over 100 unit tests and resolved bugs across critical applications to improve app reliability and maintainability",
+  "Contributed to feature requests within an Agile Scrum Framework to iteratively plan, develop, and review new functionality",
+  "Collaborated across teams to ensure compliance with Department of Transportation regulations to reduce operational risk",
+  "Led a team of 6 interns in a company wide hackathon to train an AI model utilizing BigQuery ML to detect fraud in shipment logs and presented results to both Google and UPS representatives"
 ];
 
 function ExperienceCard({ experience, index }: { experience: WorkExperience; index: number }) {
@@ -50,7 +54,15 @@ function ExperienceCard({ experience, index }: { experience: WorkExperience; ind
         <span className="text-slate-400 font-medium md:text-right">{experience.duration}</span>
       </div>
       
-      <p className="text-slate-300 text-lg leading-relaxed mb-4">{experience.description}</p>
+      {/* Bulleted achievements list */}
+      <ul className="space-y-3 mb-6">
+        {achievements.map((achievement, index) => (
+          <li key={index} className="flex items-start gap-3 text-slate-300">
+            <span className="text-cyan-400 mt-1">•</span>
+            <span>{achievement}</span>
+          </li>
+        ))}
+      </ul>
       
       {experience.technologies && (
         <div className="flex flex-wrap gap-2">
@@ -93,21 +105,6 @@ export default function WorkExperience() {
         {workExperiences.map((experience, index) => (
           <ExperienceCard key={index} experience={experience} index={index} />
         ))}
-        
-        {/* Achievements section */}
-        <div 
-          className="bg-slate-800 rounded-xl shadow-lg p-8 border-l-4 border-cyan-400"
-        >
-          <h3 className="text-2xl font-bold text-white mb-4">Key Achievements</h3>
-          <ul className="space-y-3">
-            {achievements.map((achievement, index) => (
-              <li key={index} className="flex items-start gap-3 text-slate-300">
-                <span className="text-cyan-400 mt-1">•</span>
-                <span>{achievement}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
     </section>
   );

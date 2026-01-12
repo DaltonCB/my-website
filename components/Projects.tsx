@@ -16,7 +16,7 @@ const projects: Project[] = [
   {
     title: "EdVenture Study Abroad",
     description: "A comprehensive full-stack social web application designed to connect study abroad students worldwide through location-based peer discovery and collaborative trip planning.",
-    image: "/globe.svg",
+    image: "/edventurelogo.png",
     link: "#",
     technologies: ["TypeScript", "React", "Node.js", "MongoDB", "Express", "Google Maps API", "Cloudinary"],
     features: [
@@ -31,7 +31,7 @@ const projects: Project[] = [
   {
     title: "Explorio",
     description: "A mobile application designed to generate detailed vacation itineraries based on user preferences, leveraging location APIs and Firebase for secure data management.",
-    image: "/window.svg",
+    image: "/exploriologo1.png",
     link: "#",
     technologies: ["Flutter", "Firebase", "Google Places API", "Dart"],
     features: [
@@ -43,9 +43,9 @@ const projects: Project[] = [
     ]
   },
   {
-    title: "Personal Portfolio Website",
+    title: "Personal Portfolio Website", 
     description: "A modern responsive portfolio website showcasing my development skills and professional experience.",
-    image: "/file.svg",
+    image: "/window.svg",
     link: "#",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     features: [
@@ -72,7 +72,20 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       }}
     >
       {project.image && (
-        <img src={project.image} alt={project.title} className="w-16 h-16 mb-4 mx-auto" />
+        <img 
+          src={project.image} 
+          alt={project.title} 
+          className={`w-16 h-16 mb-4 mx-auto ${
+            project.title === "Personal Portfolio Website" 
+              ? "filter brightness-0 saturate-100 invert-0 sepia-1 hue-rotate-180 brightness-2 contrast-1" 
+              : ""
+          }`}
+          style={
+            project.title === "Personal Portfolio Website"
+              ? { filter: "invert(56%) sepia(94%) saturate(1546%) hue-rotate(162deg) brightness(101%) contrast(101%)" }
+              : {}
+          }
+        />
       )}
       <h3 className="text-xl font-semibold mb-3 text-white text-center">{project.title}</h3>
       <p className="text-slate-300 mb-4 text-center leading-relaxed flex-grow">{project.description}</p>
