@@ -11,16 +11,20 @@ export type AboutItem = {
 
 const aboutItems: AboutItem[] = [
   {
-    title: "Full-Stack Developer",
-    description: "I love building modern web applications using React, Next.js, and TypeScript.",
+    title: "Computer Science Student",
+    description: "Currently pursuing a Bachelor of Science in Computer Science at Purdue University with a 3.71 GPA, graduating May 2026.",
     image: "/file.svg",
   },
   {
-    title: "Traveler",
-    description: "Exploring new places and cultures inspires my creativity and problem-solving.",
+    title: "Software Development Co-op",
+    description: "Working at UPS developing mobile applications for 30,000+ drivers nationwide using .NET MAUI, C#, and SQL databases.",
     image: "/globe.svg",
   },
-  // Add more items here
+  {
+    title: "Full-Stack Developer",
+    description: "Experienced in building modern web applications using React, TypeScript, Node.js, and cloud technologies like MongoDB and Firebase.",
+    image: "/window.svg",
+  },
 ];
 
 function AboutCard({ item, index }: { item: AboutItem; index: number }) {
@@ -74,7 +78,7 @@ export default function About() {
           About Me
         </h2>
         <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-          Get to know me better - my passions, skills, and what drives me as a developer.
+          Computer Science student at Purdue University with hands-on experience in software development and a passion for creating impactful applications.
         </p>
       </div>
       

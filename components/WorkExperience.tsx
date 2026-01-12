@@ -12,26 +12,19 @@ export type WorkExperience = {
 
 const workExperiences: WorkExperience[] = [
   {
-    title: "Full-Stack Developer",
-    company: "Tech Solutions Inc.",
-    duration: "2023 - Present",
-    description: "Developed and maintained modern web applications using React, Next.js, and Node.js. Collaborated with cross-functional teams to deliver high-quality software solutions.",
-    technologies: ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL"]
+    title: "Software Development Intern / Co-op",
+    company: "UPS, Inc",
+    duration: "June 2025 - Present",
+    description: "Extended from summer internship to 6-month co-op in recognition of exceptional performance. Developed a .NET MAUI Android app used by drivers to manage navigation, job assignments, time logs, and compensation for over 30,000 drivers nationwide. Created front-end interfaces using XAML and implemented backend logic in C# with SQL databases.",
+    technologies: [".NET MAUI", "C#", "XAML", "SQL", "Android", "Agile Scrum"]
   },
-  {
-    title: "Frontend Developer",
-    company: "Digital Agency",
-    duration: "2022 - 2023",
-    description: "Built responsive user interfaces and implemented interactive features for client websites. Focused on performance optimization and user experience improvements.",
-    technologies: ["React", "JavaScript", "CSS", "Tailwind CSS", "Figma"]
-  },
-  {
-    title: "Junior Developer",
-    company: "StartupCo",
-    duration: "2021 - 2022",
-    description: "Contributed to the development of a mobile-first web application. Gained experience in agile development methodologies and version control systems.",
-    technologies: ["HTML", "CSS", "JavaScript", "Git", "MongoDB"]
-  },
+];
+
+// Additional achievements section
+const achievements = [
+  "Refactored over 100 unit tests and resolved bugs across critical applications",
+  "Led a team of 6 interns in company-wide hackathon training AI model with BigQuery ML",
+  "Collaborated across teams to ensure DOT compliance and reduce operational risk"
 ];
 
 function ExperienceCard({ experience, index }: { experience: WorkExperience; index: number }) {
@@ -100,6 +93,21 @@ export default function WorkExperience() {
         {workExperiences.map((experience, index) => (
           <ExperienceCard key={index} experience={experience} index={index} />
         ))}
+        
+        {/* Achievements section */}
+        <div 
+          className="bg-gradient-to-r from-indigo-500/10 to-purple-500/10 backdrop-blur-lg rounded-xl shadow-lg p-8 border border-indigo-400/20"
+        >
+          <h3 className="text-2xl font-bold text-indigo-300 mb-4">Key Achievements</h3>
+          <ul className="space-y-3">
+            {achievements.map((achievement, index) => (
+              <li key={index} className="flex items-start gap-3 text-gray-200">
+                <span className="text-indigo-400 mt-1">•</span>
+                <span>{achievement}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );
