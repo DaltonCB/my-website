@@ -51,7 +51,8 @@ function AboutCard({ item, index }: { item: AboutItem; index: number }) {
                 alt={item.title} 
                 width={32} 
                 height={32} 
-                className="opacity-70" 
+                className="brightness-150 contrast-125" 
+                style={{ filter: "invert(56%) sepia(94%) saturate(1546%) hue-rotate(162deg) brightness(101%) contrast(101%)" }}
               />
             </div>
           </div>
