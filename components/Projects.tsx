@@ -118,7 +118,7 @@ function ProjectCard({ project, index, onProjectClick }: { project: Project; ind
     <div 
       ref={ref}
       onClick={() => onProjectClick(project)}
-      className={`bg-slate-800 rounded-xl shadow-lg p-6 flex flex-col hover:bg-slate-700 transition-all duration-700 hover:scale-105 border-l-4 border-cyan-400 cursor-pointer h-[600px] ${
+      className={`bg-slate-800 rounded-xl shadow-lg p-6 flex flex-col hover:bg-slate-700 transition-all duration-700 hover:scale-105 border-l-4 border-cyan-400 cursor-pointer h-[650px] ${
         isVisible 
           ? 'opacity-100 transform translate-y-0' 
           : 'opacity-0 transform translate-y-8'
