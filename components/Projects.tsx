@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 // components/Projects.tsx
@@ -98,9 +99,11 @@ function ProjectCard({ project, index, onProjectClick }: { project: Project; ind
       }}
     >
       {project.image && (
-        <img 
+        <Image 
           src={project.image} 
           alt={project.title} 
+          width={64}
+          height={64}
           className={`w-16 h-16 mb-4 mx-auto ${
             project.title === "Personal Portfolio Website" 
               ? "filter brightness-0 saturate-100 invert-0 sepia-1 hue-rotate-180 brightness-2 contrast-1" 
@@ -186,9 +189,11 @@ function ProjectModal({ project, isOpen, onClose }: { project: Project | null; i
           <div className="flex justify-between items-start mb-6">
             <div className="flex items-center gap-4">
               {project.image && (
-                <img 
+                <Image 
                   src={project.image} 
                   alt={project.title} 
+                  width={48}
+                  height={48}
                   className={`w-12 h-12 ${
                     project.title === "Personal Portfolio Website" 
                       ? "filter brightness-0 saturate-100 invert-0 sepia-1 hue-rotate-180 brightness-2 contrast-1" 
@@ -220,6 +225,8 @@ function ProjectModal({ project, isOpen, onClose }: { project: Project | null; i
               <h3 className="text-xl font-semibold text-white mb-4">Project Screenshots</h3>
               <div className="relative">
                 <div className="flex items-center justify-center bg-slate-700 rounded-lg p-2">
+                  {/* Keep as img for dynamic gallery since Image requires known dimensions */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img 
                     src={project.images[currentImageIndex]}
                     alt={`${project.title} screenshot ${currentImageIndex + 1}`}
@@ -333,7 +340,7 @@ export default function Projects() {
           My <span className="text-cyan-400">Projects</span>
         </h2>
         <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-          Here are some of the projects I've worked on that showcase my skills and passion for development.
+          Here are some of the projects I&apos;ve worked on that showcase my skills and passion for development.
         </p>
       </div>
       

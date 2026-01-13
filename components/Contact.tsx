@@ -16,10 +16,10 @@ export default function Contact() {
         }`}
       >
         <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
-          Let's <span className="text-cyan-400">Connect</span>
+          Let&apos;s <span className="text-cyan-400">Connect</span>
         </h2>
         <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-          I'm always interested in new opportunities and collaborations. Feel free to reach out!
+          I&apos;m always interested in new opportunities and collaborations. Feel free to reach out!
         </p>
       </div>
 

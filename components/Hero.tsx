@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="flex flex-col items-center justify-center min-h-[60vh] text-center px-4 py-4">
       <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 text-white tracking-tight">
-        Hello, I'm <span className="text-cyan-400">Dalton Babbs</span>.
+        Hello, I&apos;m <span className="text-cyan-400">Dalton Babbs</span>.
       </h1>
       <p className="text-lg sm:text-xl md:text-2xl max-w-2xl text-slate-300 mb-8 leading-relaxed">
         I am a Computer Science student at Purdue University with hands-on experience as a Software Development Co-op at UPS, building applications for 30,000+ drivers nationwide. Passionate about creating impactful software solutions.

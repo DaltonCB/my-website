@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
-import { GraduationCap, Briefcase, Code2, Layers, Dumbbell } from "lucide-react";
+import { GraduationCap, Briefcase, Code2, Dumbbell } from "lucide-react";
 
 export type AboutItem = {
   title: string;
   description: string;
-  icon: React.ComponentType<any>;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 };
 
 const aboutItems: AboutItem[] = [
