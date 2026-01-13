@@ -47,7 +47,7 @@ const projects: Project[] = [
       "Leveraged the Google Places API to dynamically source authentic locations, crafting personalized trip itineraries tailored to user preferences and interests",
       "Designed multi-factor authentication for the application and worked on data storage in Firebase, increasing security and improving reliability"
     ],
-    image: "/exploriologo1.png",
+    image: "/explorio-logo.png",
     link: "#",
     technologies: ["Flutter", "Firebase", "Google Places API", "Dart"],
     features: [
@@ -97,22 +97,35 @@ function ProjectCard({ project, index, onProjectClick }: { project: Project; ind
       }}
     >
       {project.image && (
-        <img 
-          src={project.image} 
-          alt={project.title} 
-          width={64}
-          height={64}
-          className={`w-16 h-16 mb-4 mx-auto object-contain ${
-            project.title === "Personal Portfolio Website" 
-              ? "filter brightness-0 saturate-100 invert-0 sepia-1 hue-rotate-180 brightness-2 contrast-1" 
-              : ""
-          }`}
-          style={
-            project.title === "Personal Portfolio Website"
-              ? { filter: "invert(56%) sepia(94%) saturate(1546%) hue-rotate(162deg) brightness(101%) contrast(101%)" }
-              : {}
-          }
-        />
+        <>
+          <img 
+            src={project.image} 
+            alt={project.title} 
+            width={64}
+            height={64}
+            className={`w-16 h-16 mb-4 mx-auto object-contain ${
+              project.title === "Personal Portfolio Website" 
+                ? "filter brightness-0 saturate-100 invert-0 sepia-1 hue-rotate-180 brightness-2 contrast-1" 
+                : ""
+            }`}
+            style={
+              project.title === "Personal Portfolio Website"
+                ? { filter: "invert(56%) sepia(94%) saturate(1546%) hue-rotate(162deg) brightness(101%) contrast(101%)" }
+                : {}
+            }
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+              const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+              if (fallback) fallback.style.display = 'flex';
+            }}
+          />
+          <div 
+            className="w-16 h-16 mb-4 mx-auto bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-xl hidden"
+            style={{ display: 'none' }}
+          >
+            {project.title.charAt(0)}
+          </div>
+        </>
       )}
       <h3 className="text-xl font-semibold mb-3 text-white text-center">{project.title}</h3>
       <p className="text-slate-300 mb-4 text-center leading-relaxed flex-grow">{project.description}</p>
