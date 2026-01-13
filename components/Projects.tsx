@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { Github } from "lucide-react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 // components/Projects.tsx
@@ -27,7 +28,7 @@ const projects: Project[] = [
       "Collaborated with a 5-person team using Scrum, delivering modular features in 4-week sprints"
     ],
     image: "/edventurelogo.png",
-    link: "#",
+    link: "https://github.com/mtwind/EdVenture",
     technologies: ["TypeScript", "React", "Node.js", "MongoDB", "Express", "Google Maps API", "Cloudinary"],
     features: [
       "Real-time messaging and group chats",
@@ -70,7 +71,7 @@ const projects: Project[] = [
       "Deployed with Vercel for fast global content delivery"
     ],
     image: "/window.svg",
-    link: "#",
+    link: "https://github.com/DaltonCB/my-website",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     features: [
       "Smooth scroll animations",
@@ -80,6 +81,36 @@ const projects: Project[] = [
   },
 ];
 
+function GitHubRepoCard({ project, index }: { project: Project; index: number }) {
+  const { ref, isVisible } = useScrollAnimation(0.2);
+  
+  return (
+    <div 
+      ref={ref}
+      onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}
+      className={`bg-slate-800/50 rounded-xl shadow-lg p-6 flex items-center justify-center hover:bg-slate-700/50 transition-all duration-700 hover:scale-105 border-l-4 border-green-400 cursor-pointer min-h-[120px] ${
+        isVisible 
+          ? 'opacity-100 transform translate-y-0' 
+          : 'opacity-0 transform translate-y-8'
+      }`}
+      style={{ 
+        transitionDelay: `${index * 150}ms` 
+      }}
+    >
+      <div className="text-center">
+        <div className="flex items-center justify-center gap-3 mb-2">
+          <Github size={24} className="text-green-400" />
+          <h3 className="text-lg font-semibold text-white">GitHub Repository</h3>
+        </div>
+        <p className="text-slate-300 text-sm mb-3">View the source code for this project</p>
+        <span className="text-green-400 font-medium text-sm">
+          GitHub Repo Link →
+        </span>
+      </div>
+    </div>
+  );
+}
+
 function ProjectCard({ project, index, onProjectClick }: { project: Project; index: number; onProjectClick: (project: Project) => void }) {
   const { ref, isVisible } = useScrollAnimation(0.2);
   
@@ -87,7 +118,7 @@ function ProjectCard({ project, index, onProjectClick }: { project: Project; ind
     <div 
       ref={ref}
       onClick={() => onProjectClick(project)}
-      className={`bg-slate-800 rounded-xl shadow-lg p-6 flex flex-col hover:bg-slate-700 transition-all duration-700 hover:scale-105 border-l-4 border-cyan-400 cursor-pointer ${
+      className={`bg-slate-800 rounded-xl shadow-lg p-6 flex flex-col hover:bg-slate-700 transition-all duration-700 hover:scale-105 border-l-4 border-cyan-400 cursor-pointer h-[600px] ${
         isVisible 
           ? 'opacity-100 transform translate-y-0' 
           : 'opacity-0 transform translate-y-8'
@@ -229,6 +260,22 @@ function ProjectModal({ project, isOpen, onClose }: { project: Project | null; i
             </ul>
           </div>
           
+          {/* Project Link */}
+          {(project.title === "Personal Portfolio Website" || project.title === "EdVenture Study Abroad") && (
+            <div className="mb-6">
+              <h3 className="text-xl font-semibold text-white mb-3">Project Link</h3>
+              <a 
+                href={project.link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors font-medium"
+              >
+                <Github size={18} />
+                GitHub Repo Link →
+              </a>
+            </div>
+          )}
+          
           {/* Technologies */}
           {project.technologies && (
             <div className="mb-6">
@@ -286,7 +333,14 @@ export default function Projects() {
       
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} index={index} onProjectClick={handleProjectClick} />
+          <div key={index}>
+            <ProjectCard project={project} index={index} onProjectClick={handleProjectClick} />
+            {(project.title === "Personal Portfolio Website" || project.title === "EdVenture Study Abroad") && (
+              <div className="mt-4">
+                <GitHubRepoCard project={project} index={index + 1} />
+              </div>
+            )}
+          </div>
         ))}
       </div>
       
