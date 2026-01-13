@@ -47,7 +47,7 @@ const projects: Project[] = [
       "Leveraged the Google Places API to dynamically source authentic locations, crafting personalized trip itineraries tailored to user preferences and interests",
       "Designed multi-factor authentication for the application and worked on data storage in Firebase, increasing security and improving reliability"
     ],
-    image: "/exploriologo1.png",
+    image: "/exploriologo1.PNG",
     link: "#",
     technologies: ["Flutter", "Firebase", "Google Places API", "Dart"],
     features: [
