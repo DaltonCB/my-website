@@ -10,7 +10,6 @@ export type Project = {
   description: string;
   detailedDescription: string[];
   image?: string;
-  images?: string[];
   link?: string;
   technologies?: string[];
   features?: string[];
@@ -28,7 +27,6 @@ const projects: Project[] = [
       "Collaborated with a 5-person team using Scrum, delivering modular features in 4-week sprints"
     ],
     image: "/edventurelogo.png",
-    images: ["/edventure2.png", "/edventure3.png", "/edventure4.png", "/edventure5.png", "/edventure6.png"],
     link: "#",
     technologies: ["TypeScript", "React", "Node.js", "MongoDB", "Express", "Google Maps API", "Cloudinary"],
     features: [
@@ -159,21 +157,7 @@ function ProjectCard({ project, index, onProjectClick }: { project: Project; ind
 }
 
 function ProjectModal({ project, isOpen, onClose }: { project: Project | null; isOpen: boolean; onClose: () => void }) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
   if (!isOpen || !project) return null;
-
-  const nextImage = () => {
-    if (project.images) {
-      setCurrentImageIndex((prev) => (prev + 1) % project.images!.length);
-    }
-  };
-
-  const prevImage = () => {
-    if (project.images) {
-      setCurrentImageIndex((prev) => (prev - 1 + project.images!.length) % project.images!.length);
-    }
-  };
 
   return (
     <div 
@@ -218,63 +202,6 @@ function ProjectModal({ project, isOpen, onClose }: { project: Project | null; i
           
           {/* Project description */}
           <p className="text-slate-300 text-lg leading-relaxed mb-6">{project.description}</p>
-          
-          {/* Image Gallery */}
-          {project.images && project.images.length > 0 && (
-            <div className="mb-6">
-              <h3 className="text-xl font-semibold text-white mb-4">Project Screenshots</h3>
-              <div className="relative">
-                <div className="flex items-center justify-center bg-slate-700 rounded-lg p-2">
-                  {/* Keep as img for dynamic gallery since Image requires known dimensions */}
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img 
-                    src={project.images[currentImageIndex]}
-                    alt={`${project.title} screenshot ${currentImageIndex + 1}`}
-                    className="max-w-full max-h-96 object-contain rounded-lg cursor-pointer hover:scale-105 transition-transform"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      window.open(project.images![currentImageIndex], '_blank');
-                    }}
-                  />
-                </div>
-                
-                {/* Navigation arrows */}
-                {project.images.length > 1 && (
-                  <>
-                    <button 
-                      onClick={prevImage}
-                      className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
-                    >
-                      ←
-                    </button>
-                    <button 
-                      onClick={nextImage}
-                      className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
-                    >
-                      →
-                    </button>
-                  </>
-                )}
-                
-                {/* Image indicators */}
-                {project.images.length > 1 && (
-                  <div className="flex justify-center mt-4 gap-2">
-                    {project.images.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setCurrentImageIndex(index)}
-                        className={`w-3 h-3 rounded-full transition-colors ${
-                          index === currentImageIndex 
-                            ? 'bg-cyan-400' 
-                            : 'bg-slate-500 hover:bg-slate-400'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
           
           {/* Detailed description */}
           <div className="mb-6">
