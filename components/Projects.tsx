@@ -97,12 +97,12 @@ function ProjectCard({ project, index, onProjectClick }: { project: Project; ind
       }}
     >
       {project.image && (
-        <Image 
+        <img 
           src={project.image} 
           alt={project.title} 
           width={64}
           height={64}
-          className={`w-16 h-16 mb-4 mx-auto ${
+          className={`w-16 h-16 mb-4 mx-auto object-contain ${
             project.title === "Personal Portfolio Website" 
               ? "filter brightness-0 saturate-100 invert-0 sepia-1 hue-rotate-180 brightness-2 contrast-1" 
               : ""
