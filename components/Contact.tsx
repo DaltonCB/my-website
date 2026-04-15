@@ -33,11 +33,11 @@ export default function Contact() {
           </div>
           <h3 className="text-xl font-semibold text-white mb-2">Email</h3>
           <a 
-            href="mailto:daltoncbabbs@yahoo.com" 
+            href="mailto:daltonbabbs.db@gmail.com" 
             className="text-slate-300 hover:text-cyan-400 transition-colors text-xs whitespace-nowrap"
-            title="daltoncbabbs@yahoo.com"
+            title="daltonbabbs.db@gmail.com"
           >
-            daltoncbabbs@yahoo.com
+            daltonbabbs.db@gmail.com
           </a>
         </div>
 
