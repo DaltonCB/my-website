@@ -18,7 +18,7 @@ const educationItems: EducationItem[] = [
     degree: "Bachelor of Science in Computer Science",
     gpa: "3.71/4.00",
     graduationDate: "May 2026",
-    description: "Pursuing a comprehensive computer science education with focus on software development, algorithms, data structures, and modern programming practices. My degree track at Purdue University focuses on Software Engineering."
+    description: "Completed a comprehensive computer science education with focus on software development, algorithms, data structures, and modern programming practices. My degree track at Purdue University focused on Software Engineering."
   },
 ];
 
