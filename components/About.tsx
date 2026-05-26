@@ -12,8 +12,8 @@ export type AboutItem = {
 
 const aboutItems: AboutItem[] = [
   {
-    title: "Computer Science Student",
-    description: "Currently pursuing a Bachelor of Science in Computer Science at Purdue University with a 3.71 GPA, graduating May 2026.",
+    title: "Computer Science Graduate",
+    description: "Completed a Bachelor of Science in Computer Science at Purdue University with a 3.71 GPA and graduated May 2026.",
     icon: GraduationCap,
   },
   {
