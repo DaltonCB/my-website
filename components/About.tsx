@@ -103,7 +103,7 @@ export default function About() {
           About <span className="text-cyan-400">Me</span>
         </h2>
         <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-          Computer Science student at Purdue University graduating in May 2026 with hands-on experience in software development and a passion for creating impactful applications.
+          Software Engineer and Computer Science graduate with hands-on experience in agile software development and a passion for creating impactful applications.
         </p>
       </div>
       
