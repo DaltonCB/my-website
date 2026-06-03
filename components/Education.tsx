@@ -31,7 +31,8 @@ const relevantCoursework = [
   "Object-Oriented Programming",
   "Programming in C",
   "Computer Networks",
-  "Software Testing"
+  "Software Testing",
+  "Analysis of Algorithms"
 ];
 
 function EducationCard({ education, index }: { education: EducationItem; index: number }) {
