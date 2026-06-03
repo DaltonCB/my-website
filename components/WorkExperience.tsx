@@ -22,7 +22,7 @@ const workExperiences: WorkExperience[] = [
 
 // Bulleted achievements from resume
 const achievements = [
-  "Extended from summer internship to 6-month co-op in recognition of exceptional performance",
+  "Extended from summer internship to two 6-month co-ops in recognition of exceptional performance",
   "Developed a .NET MAUI Android app used by drivers to manage navigation, job assignments, time logs, and compensation for over 30,000 drivers nationwide",
   "Created front-end interfaces using XAML to improve driver satisfaction when using mobile work app and implemented backend logic in C# with SQL databases to provide accurate accounting of driver statistics",
   "Refactored over 100 unit tests and resolved bugs across critical applications to improve app reliability and maintainability",
