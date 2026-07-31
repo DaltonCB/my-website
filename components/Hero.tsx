@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import RotatingRoles from "./RotatingRoles";
 
 export default function Hero() {
   return (
@@ -8,9 +9,10 @@ export default function Hero() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left Column: Title, subtitle, buttons */}
         <div className="flex flex-col items-center text-center md:items-start md:text-left order-2 md:order-1">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 text-white tracking-tight">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-4 text-white tracking-tight">
             Hello, I&apos;m <span className="text-sky-400">Dalton Babbs</span>.
           </h1>
+          <RotatingRoles />
           <p className="text-lg sm:text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed">
             I am a Software Engineer with hands-on experience as a Software Development Co-op at UPS, building applications for 30,000+ drivers nationwide. Passionate about creating impactful software solutions.
           </p>
