@@ -24,7 +24,7 @@ function SkillCategoryCard({ category, index }: { category: SkillCategory; index
   return (
     <div 
       ref={ref}
-      className={`bg-slate-800 rounded-xl shadow-lg p-8 hover:bg-slate-700 transition-all duration-700 border-l-4 border-sky-400 ${
+      className={`bg-nebula rounded-xl shadow-lg p-8 hover:bg-nebula-light transition-all duration-700 border-l-4 border-accent-1 hover:shadow-[0_0_25px_-5px_rgba(56,189,248,0.5)] ${
         isVisible 
           ? 'opacity-100 transform translate-y-0' 
           : 'opacity-0 transform translate-y-8'
@@ -38,7 +38,7 @@ function SkillCategoryCard({ category, index }: { category: SkillCategory; index
         {category.skills.map((skill, skillIndex) => (
           <span 
             key={skillIndex}
-            className="px-4 py-2 bg-sky-500/20 text-sky-300 rounded-lg text-sm font-medium border border-sky-400/30 hover:bg-sky-500/30 transition-colors"
+            className="px-4 py-2 bg-accent-1/20 text-accent-1 rounded-lg text-sm font-medium border border-accent-1/30 hover:bg-accent-1/30 transition-colors"
           >
             {skill}
           </span>
@@ -62,7 +62,7 @@ export default function Skills() {
         }`}
       >
         <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
-          My <span className="text-sky-400">Skills</span>
+          My <span className="bg-gradient-to-r from-accent-1 to-accent-2 bg-clip-text text-transparent">Skills</span>
         </h2>
         <p className="text-lg text-slate-300 max-w-2xl mx-auto">
           The technologies and tools I use to bring ideas to life and solve complex problems.

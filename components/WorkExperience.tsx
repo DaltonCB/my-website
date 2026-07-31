@@ -37,7 +37,7 @@ function ExperienceCard({ experience, index }: { experience: WorkExperience; ind
   return (
     <div 
       ref={ref}
-      className={`bg-slate-800 rounded-xl shadow-lg p-8 hover:bg-slate-700 transition-all duration-700 border-l-4 border-sky-400 ${
+      className={`bg-nebula rounded-xl shadow-lg p-8 hover:bg-nebula-light transition-all duration-700 border-l-4 border-accent-1 hover:shadow-[0_0_25px_-5px_rgba(56,189,248,0.5)] ${
         isVisible 
           ? 'opacity-100 transform translate-y-0' 
           : 'opacity-0 transform translate-y-8'
@@ -49,7 +49,7 @@ function ExperienceCard({ experience, index }: { experience: WorkExperience; ind
       <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
         <div>
           <h3 className="text-2xl font-bold text-white mb-1">{experience.title}</h3>
-          <h4 className="text-xl font-semibold text-sky-400 mb-2">{experience.company}</h4>
+          <h4 className="text-xl font-semibold text-accent-1 mb-2">{experience.company}</h4>
         </div>
         <span className="text-slate-400 font-medium md:text-right">{experience.duration}</span>
       </div>
@@ -58,7 +58,7 @@ function ExperienceCard({ experience, index }: { experience: WorkExperience; ind
       <ul className="space-y-3 mb-6">
         {achievements.map((achievement, index) => (
           <li key={index} className="flex items-start gap-3 text-slate-300">
-            <span className="text-sky-400 mt-1">•</span>
+            <span className="text-accent-1 mt-1">•</span>
             <span>{achievement}</span>
           </li>
         ))}
@@ -69,7 +69,7 @@ function ExperienceCard({ experience, index }: { experience: WorkExperience; ind
           {experience.technologies.map((tech, techIndex) => (
             <span 
               key={techIndex}
-              className="px-3 py-1 bg-sky-500/20 text-sky-300 rounded-full text-sm font-medium border border-sky-400/30"
+              className="px-3 py-1 bg-accent-1/20 text-accent-1 rounded-full text-sm font-medium border border-accent-1/30"
             >
               {tech}
             </span>
@@ -94,9 +94,9 @@ export default function WorkExperience() {
         }`}
       >
         <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
-          Work <span className="text-sky-400">Experience</span>
+          Work <span className="bg-gradient-to-r from-accent-1 to-accent-2 bg-clip-text text-transparent">Experience</span>
         </h2>
-        <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+        <p className="text-lg text-slate-300 max-w-2xl mx-auto">
           My professional journey and the experiences that have shaped my development career.
         </p>
       </div>

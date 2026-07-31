@@ -88,7 +88,7 @@ function GitHubRepoCard({ project, index }: { project: Project; index: number })
     <div 
       ref={ref}
       onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}
-      className={`bg-slate-800/50 rounded-xl shadow-lg p-6 flex items-center justify-center hover:bg-slate-700/50 transition-all duration-700 hover:scale-105 border-l-4 border-green-400 cursor-pointer min-h-[120px] ${
+      className={`bg-nebula/50 rounded-xl shadow-lg p-6 flex items-center justify-center hover:bg-nebula-light/50 transition-all duration-700 hover:scale-105 border-l-4 border-accent-1 cursor-pointer min-h-[120px] ${
         isVisible 
           ? 'opacity-100 transform translate-y-0' 
           : 'opacity-0 transform translate-y-8'
@@ -99,11 +99,11 @@ function GitHubRepoCard({ project, index }: { project: Project; index: number })
     >
       <div className="text-center">
         <div className="flex items-center justify-center gap-3 mb-2">
-          <Github size={24} className="text-green-400" />
+          <Github size={24} className="text-accent-1" />
           <h3 className="text-lg font-semibold text-white">GitHub Repository</h3>
         </div>
         <p className="text-slate-300 text-sm mb-3">View the source code for this project</p>
-        <span className="text-green-400 font-medium text-sm">
+        <span className="text-accent-1 font-medium text-sm">
           GitHub Repo Link →
         </span>
       </div>
@@ -118,7 +118,7 @@ function ProjectCard({ project, index, onProjectClick }: { project: Project; ind
     <div 
       ref={ref}
       onClick={() => onProjectClick(project)}
-      className={`bg-slate-800 rounded-xl shadow-lg p-6 flex flex-col hover:bg-slate-700 transition-all duration-700 hover:scale-105 border-l-4 border-sky-400 cursor-pointer h-[650px] ${
+      className={`bg-nebula rounded-xl shadow-lg p-6 flex flex-col hover:bg-nebula-light transition-all duration-700 hover:scale-105 border-l-4 border-accent-1 hover:shadow-[0_0_25px_-5px_rgba(56,189,248,0.5)] cursor-pointer h-[650px] ${
         isVisible 
           ? 'opacity-100 transform translate-y-0' 
           : 'opacity-0 transform translate-y-8'
@@ -151,7 +151,7 @@ function ProjectCard({ project, index, onProjectClick }: { project: Project; ind
             }}
           />
           <div 
-            className="w-16 h-16 mb-4 mx-auto bg-sky-500 rounded-full flex items-center justify-center text-white font-bold text-xl hidden"
+            className="w-16 h-16 mb-4 mx-auto bg-accent-1 rounded-full flex items-center justify-center text-white font-bold text-xl hidden"
             style={{ display: 'none' }}
           >
             {project.title.charAt(0)}
@@ -163,12 +163,12 @@ function ProjectCard({ project, index, onProjectClick }: { project: Project; ind
       
       {project.technologies && (
         <div className="mb-4">
-          <h4 className="text-sm font-semibold text-sky-400 mb-2">Technologies:</h4>
+          <h4 className="text-sm font-semibold text-accent-1 mb-2">Technologies:</h4>
           <div className="flex flex-wrap gap-1">
             {project.technologies.map((tech, techIndex) => (
               <span 
                 key={techIndex}
-                className="px-2 py-1 bg-sky-500/20 text-sky-300 rounded text-xs font-medium border border-sky-400/30"
+                className="px-2 py-1 bg-accent-1/20 text-accent-1 rounded text-xs font-medium border border-accent-1/30"
               >
                 {tech}
               </span>
@@ -179,11 +179,11 @@ function ProjectCard({ project, index, onProjectClick }: { project: Project; ind
       
       {project.features && (
         <div className="mb-4">
-          <h4 className="text-sm font-semibold text-sky-400 mb-2">Key Features:</h4>
+          <h4 className="text-sm font-semibold text-accent-1 mb-2">Key Features:</h4>
           <ul className="text-xs text-slate-300 space-y-1">
             {project.features.slice(0, 3).map((feature, featureIndex) => (
               <li key={featureIndex} className="flex items-start gap-1">
-                <span className="text-indigo-400 mt-0.5">•</span>
+                <span className="text-accent-2 mt-0.5">•</span>
                 <span>{feature}</span>
               </li>
             ))}
@@ -192,7 +192,7 @@ function ProjectCard({ project, index, onProjectClick }: { project: Project; ind
       )}
       
       <div className="mt-auto pt-4 text-center">
-        <span className="text-sky-400 font-medium text-sm">
+        <span className="text-accent-1 font-medium text-sm">
           Click to view details
         </span>
       </div>
@@ -209,7 +209,7 @@ function ProjectModal({ project, isOpen, onClose }: { project: Project | null; i
       onClick={onClose}
     >
       <div 
-        className="bg-slate-800 rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-slate-700"
+        className="bg-nebula rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-nebula-light"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="p-8">
@@ -253,7 +253,7 @@ function ProjectModal({ project, isOpen, onClose }: { project: Project | null; i
             <ul className="space-y-3">
               {project.detailedDescription.map((detail, index) => (
                 <li key={index} className="flex items-start gap-3 text-slate-300">
-                  <span className="text-sky-400 mt-1">•</span>
+                  <span className="text-accent-1 mt-1">•</span>
                   <span>{detail}</span>
                 </li>
               ))}
@@ -268,7 +268,7 @@ function ProjectModal({ project, isOpen, onClose }: { project: Project | null; i
                 href={project.link} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sky-400 hover:text-sky-300 transition-colors font-medium"
+                className="inline-flex items-center gap-2 text-accent-1 hover:text-accent-1 transition-colors font-medium"
               >
                 <Github size={18} />
                 GitHub Repo Link →
@@ -284,7 +284,7 @@ function ProjectModal({ project, isOpen, onClose }: { project: Project | null; i
                 {project.technologies.map((tech, techIndex) => (
                   <span 
                     key={techIndex}
-                    className="px-3 py-2 bg-sky-500/20 text-sky-300 rounded-lg text-sm font-medium border border-sky-400/30"
+                    className="px-3 py-2 bg-accent-1/20 text-accent-1 rounded-lg text-sm font-medium border border-accent-1/30"
                   >
                     {tech}
                   </span>
@@ -324,9 +324,9 @@ export default function Projects() {
         }`}
       >
         <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white leading-tight">
-          My <span className="text-sky-400">Projects</span>
+          My <span className="bg-gradient-to-r from-accent-1 to-accent-2 bg-clip-text text-transparent">Projects</span>
         </h2>
-        <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+        <p className="text-lg text-slate-300 max-w-2xl mx-auto">
           Here are some of the projects I&apos;ve worked on that showcase my skills and passion for development.
         </p>
       </div>

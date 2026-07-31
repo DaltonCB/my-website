@@ -41,7 +41,7 @@ function EducationCard({ education, index }: { education: EducationItem; index: 
   return (
     <div 
       ref={ref}
-      className={`bg-slate-800 rounded-xl shadow-lg p-8 hover:bg-slate-700 transition-all duration-700 border-l-4 border-sky-400 ${
+      className={`bg-nebula rounded-xl shadow-lg p-8 hover:bg-nebula-light transition-all duration-700 border-l-4 border-accent-1 hover:shadow-[0_0_25px_-5px_rgba(56,189,248,0.5)] ${
         isVisible 
           ? 'opacity-100 transform translate-y-0' 
           : 'opacity-0 transform translate-y-8'
@@ -53,11 +53,11 @@ function EducationCard({ education, index }: { education: EducationItem; index: 
       <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
         <div>
           <h3 className="text-2xl font-bold text-white mb-1">{education.degree}</h3>
-          <h4 className="text-xl font-semibold text-sky-400 mb-2">{education.institution}</h4>
+          <h4 className="text-xl font-semibold text-accent-1 mb-2">{education.institution}</h4>
           <p className="text-slate-400 text-lg">{education.location}</p>
         </div>
         <div className="text-slate-400 font-medium md:text-right mt-2 md:mt-0">
-          <div className="text-sky-300 font-semibold">GPA: {education.gpa}</div>
+          <div className="text-accent-1 font-semibold">GPA: {education.gpa}</div>
           <div className="mt-1">{education.graduationDate}</div>
         </div>
       </div>
@@ -83,7 +83,7 @@ export default function Education() {
         }`}
       >
         <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
-          My <span className="text-sky-400">Education</span>
+          My <span className="bg-gradient-to-r from-accent-1 to-accent-2 bg-clip-text text-transparent">Education</span>
         </h2>
         <p className="text-lg text-slate-300 max-w-2xl mx-auto">
           My academic foundation in computer science and the knowledge that drives my passion for development.
@@ -96,12 +96,12 @@ export default function Education() {
         ))}
         
         {/* Relevant Coursework Section */}
-        <div className="bg-slate-800 rounded-xl shadow-lg p-8 border-l-4 border-sky-400">
+        <div className="bg-nebula rounded-xl shadow-lg p-8 border-l-4 border-accent-1 hover:shadow-[0_0_25px_-5px_rgba(56,189,248,0.5)]">
           <h3 className="text-2xl font-bold text-white mb-4">Relevant Coursework</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {relevantCoursework.map((course, index) => (
               <div key={index} className="flex items-start gap-3 text-slate-300">
-                <span className="text-sky-400 mt-1">•</span>
+                <span className="text-accent-1 mt-1">•</span>
                 <span className="text-lg">{course}</span>
               </div>
             ))}

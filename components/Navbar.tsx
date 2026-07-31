@@ -14,7 +14,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-space-void/80 backdrop-blur-md border-b border-white/10">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         <a
           href="#top"
@@ -24,8 +24,8 @@ export default function Navbar() {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
-          <div className="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center shadow-md">
-            <span className="text-sky-400 font-bold text-base tracking-tight">
+          <div className="w-10 h-10 rounded-full bg-nebula-light flex items-center justify-center shadow-md">
+            <span className="text-accent-1 font-bold text-base tracking-tight">
               DB
             </span>
           </div>
@@ -36,7 +36,7 @@ export default function Navbar() {
             <a
               key={link.id}
               href={`#${link.id}`}
-              className="px-3 sm:px-4 py-2 rounded-lg text-sm font-medium text-blue-300 bg-blue-400/10 border border-blue-400/20 hover:bg-blue-400/20 hover:border-blue-400/40 hover:text-blue-200 transition-all duration-200 whitespace-nowrap"
+              className="px-3 sm:px-4 py-2 rounded-lg text-sm font-medium text-accent-1 bg-accent-1/10 border border-accent-1/20 hover:bg-accent-1/20 hover:border-accent-1/40 hover:text-white transition-all duration-200 whitespace-nowrap"
               onClick={(e) => {
                 e.preventDefault();
                 scrollTo(link.id);

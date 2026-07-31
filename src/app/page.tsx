@@ -11,9 +11,16 @@ import Contact from "../../components/Contact";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-slate-900">
+    <main className="relative min-h-screen overflow-x-hidden bg-space-void">
       {/* Subtle background pattern */}
-      <div className="absolute inset-0 bg-slate-900" />
+      <div className="absolute inset-0 bg-gradient-to-b from-space-void via-nebula/30 to-space-void" />
+      <div
+        className="absolute inset-0 opacity-20"
+        style={{
+          background:
+            "radial-gradient(circle at 15% 10%, rgba(56, 189, 248, 0.15), transparent 45%), radial-gradient(circle at 85% 80%, rgba(129, 140, 248, 0.15), transparent 45%)",
+        }}
+      />
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
           backgroundImage: 'radial-gradient(circle at 2px 2px, rgb(148 163 184) 1px, transparent 0)'

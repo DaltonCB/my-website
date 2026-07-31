@@ -22,7 +22,7 @@ export default function Hero() {
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            Hello, I&apos;m <span className="text-sky-400">Dalton Babbs</span>.
+            Hello, I&apos;m <span className="bg-gradient-to-r from-accent-1 to-accent-2 bg-clip-text text-transparent">Dalton Babbs</span>.
           </h1>
           <div
             className={`transition-all duration-700 ease-out ${
@@ -49,7 +49,7 @@ export default function Hero() {
           }`}
           style={{ transitionDelay: mounted ? "300ms" : "0ms" }}
         >
-          <div className="relative w-56 h-80 sm:w-64 sm:h-96 md:w-72 md:h-[28rem] rounded-full overflow-hidden shadow-2xl border-4 border-white/20 hover:border-indigo-400/50 transition-all duration-300">
+          <div className="relative w-56 h-80 sm:w-64 sm:h-96 md:w-72 md:h-[28rem] rounded-full overflow-hidden shadow-2xl border-4 border-white/20 hover:border-accent-2/50 transition-all duration-300">
             <Image
               src="/profile-photo.jpg"
               alt="Dalton Babbs"
@@ -58,7 +58,7 @@ export default function Hero() {
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-indigo-400/20 to-sky-400/20 hover:from-indigo-400/30 hover:to-sky-400/30 transition-all duration-300"></div>
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-accent-2/20 to-accent-1/20 hover:from-accent-2/30 hover:to-accent-1/30 transition-all duration-300"></div>
           </div>
         </div>
       </div>

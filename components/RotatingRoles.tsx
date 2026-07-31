@@ -31,7 +31,7 @@ export default function RotatingRoles() {
   return (
     <div className="h-8 sm:h-9 md:h-10 overflow-hidden mb-4">
       <p
-        className={`text-xl sm:text-2xl md:text-3xl font-semibold text-sky-400 transition-all duration-300 ease-out ${
+        className={`text-xl sm:text-2xl md:text-3xl font-semibold text-accent-1 transition-all duration-300 ease-out ${
           isVisible
             ? "opacity-100 translate-y-0"
             : "opacity-0 -translate-y-3"

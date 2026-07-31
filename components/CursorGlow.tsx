@@ -16,7 +16,7 @@ export default function CursorGlow() {
     const updateGlow = () => {
       const { x, y } = positionRef.current;
       if (glowRef.current) {
-        glowRef.current.style.background = `radial-gradient(150px circle at ${x}px ${y}px, rgba(56, 189, 248, 0.12), rgba(129, 140, 248, 0.06) 40%, transparent 70%)`;
+        glowRef.current.style.background = `radial-gradient(150px circle at ${x}px ${y}px, rgba(56, 189, 248, 0.14), rgba(129, 140, 248, 0.07) 40%, transparent 70%)`;
       }
       if (gridRevealRef.current) {
         const mask = `radial-gradient(250px circle at ${x}px ${y}px, black, transparent 70%)`;
