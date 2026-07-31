@@ -84,7 +84,7 @@ export default function WorkExperience() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation(0.3);
 
   return (
-    <section id="experience" className="w-full max-w-6xl mx-auto px-4 pt-2 pb-8">
+    <section id="experience" className="w-full max-w-6xl mx-auto px-4 pt-2 pb-8 scroll-mt-20">
       <div 
         ref={headerRef}
         className={`text-center mb-8 transition-all duration-700 ${
@@ -94,7 +94,7 @@ export default function WorkExperience() {
         }`}
       >
         <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
-          Work <span className="bg-gradient-to-r from-accent-1 to-accent-2 bg-clip-text text-transparent">Experience</span>
+          Work <span className="bg-gradient-to-r from-sky-300 to-accent-1 bg-clip-text text-transparent">Experience</span>
         </h2>
         <p className="text-lg text-slate-300 max-w-2xl mx-auto">
           My professional journey and the experiences that have shaped my development career.

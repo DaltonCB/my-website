@@ -66,7 +66,7 @@ export default function About() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation(0.3);
 
   return (
-    <section id="about" className="w-full max-w-6xl mx-auto px-4 pt-16 pb-8 sm:pt-24">
+    <section id="about" className="w-full max-w-6xl mx-auto px-4 pt-16 pb-8 sm:pt-24 scroll-mt-20">
       <div 
         ref={headerRef}
         className={`text-center mb-8 transition-all duration-700 ${
@@ -76,7 +76,7 @@ export default function About() {
         }`}
       >
         <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
-          About <span className="bg-gradient-to-r from-accent-1 to-accent-2 bg-clip-text text-transparent">Me</span>
+          About <span className="bg-gradient-to-r from-sky-300 to-accent-1 bg-clip-text text-transparent">Me</span>
         </h2>
         <p className="text-lg text-slate-300 max-w-2xl mx-auto">
           Software Engineer and Computer Science graduate with hands-on experience in agile software development and a passion for creating impactful applications.

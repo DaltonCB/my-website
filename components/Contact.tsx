@@ -6,7 +6,7 @@ export default function Contact() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation(0.3);
 
   return (
-    <section id="contact" className="w-full max-w-6xl mx-auto px-4 pt-0 pb-8">
+    <section id="contact" className="w-full max-w-6xl mx-auto px-4 pt-0 pb-8 scroll-mt-20">
       <div 
         ref={headerRef}
         className={`text-center mb-8 transition-all duration-700 ${
@@ -16,7 +16,7 @@ export default function Contact() {
         }`}
       >
         <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
-          Let&apos;s <span className="bg-gradient-to-r from-accent-1 to-accent-2 bg-clip-text text-transparent">Connect</span>
+          Let&apos;s <span className="bg-gradient-to-r from-sky-300 to-accent-1 bg-clip-text text-transparent">Connect</span>
         </h2>
         <p className="text-lg text-slate-300 max-w-2xl mx-auto">
           I&apos;m always interested in new opportunities and collaborations. Feel free to reach out!

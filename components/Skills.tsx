@@ -62,7 +62,7 @@ export default function Skills() {
         }`}
       >
         <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
-          My <span className="bg-gradient-to-r from-accent-1 to-accent-2 bg-clip-text text-transparent">Skills</span>
+          My <span className="bg-gradient-to-r from-sky-300 to-accent-1 bg-clip-text text-transparent">Skills</span>
         </h2>
         <p className="text-lg text-slate-300 max-w-2xl mx-auto">
           The technologies and tools I use to bring ideas to life and solve complex problems.

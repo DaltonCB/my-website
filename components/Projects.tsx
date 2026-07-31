@@ -314,7 +314,7 @@ export default function Projects() {
   };
 
   return (
-    <section className="pt-2 pb-8 px-4 max-w-5xl mx-auto" id="projects">
+    <section className="pt-2 pb-8 px-4 max-w-5xl mx-auto scroll-mt-20" id="projects">
       <div 
         ref={headerRef}
         className={`text-center mb-8 transition-all duration-700 ${
@@ -324,7 +324,7 @@ export default function Projects() {
         }`}
       >
         <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white leading-tight">
-          My <span className="bg-gradient-to-r from-accent-1 to-accent-2 bg-clip-text text-transparent">Projects</span>
+          My <span className="bg-gradient-to-r from-sky-300 to-accent-1 bg-clip-text text-transparent">Projects</span>
         </h2>
         <p className="text-lg text-slate-300 max-w-2xl mx-auto">
           Here are some of the projects I&apos;ve worked on that showcase my skills and passion for development.

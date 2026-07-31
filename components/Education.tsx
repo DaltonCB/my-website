@@ -73,7 +73,7 @@ export default function Education() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation(0.3);
 
   return (
-    <section id="education" className="w-full max-w-6xl mx-auto px-4 pt-2 pb-8">
+    <section id="education" className="w-full max-w-6xl mx-auto px-4 pt-2 pb-8 scroll-mt-20">
       <div 
         ref={headerRef}
         className={`text-center mb-8 transition-all duration-700 ${
@@ -83,7 +83,7 @@ export default function Education() {
         }`}
       >
         <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
-          My <span className="bg-gradient-to-r from-accent-1 to-accent-2 bg-clip-text text-transparent">Education</span>
+          My <span className="bg-gradient-to-r from-sky-300 to-accent-1 bg-clip-text text-transparent">Education</span>
         </h2>
         <p className="text-lg text-slate-300 max-w-2xl mx-auto">
           My academic foundation in computer science and the knowledge that drives my passion for development.

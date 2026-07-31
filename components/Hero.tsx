@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { Github, ArrowRight } from "lucide-react";
 import RotatingRoles from "./RotatingRoles";
 
 export default function Hero() {
@@ -22,7 +23,7 @@ export default function Hero() {
               mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            Hello, I&apos;m <span className="bg-gradient-to-r from-accent-1 to-accent-2 bg-clip-text text-transparent">Dalton Babbs</span>.
+            Hello, I&apos;m <span className="bg-gradient-to-r from-sky-300 to-accent-1 bg-clip-text text-transparent">Dalton Babbs</span>.
           </h1>
           <div
             className={`transition-all duration-700 ease-out ${
@@ -40,6 +41,44 @@ export default function Hero() {
           >
             I am a Software Engineer with hands-on experience as a Software Development Co-op at UPS, building applications for 30,000+ drivers nationwide. Passionate about creating impactful software solutions.
           </p>
+          <div
+            className={`flex flex-col sm:flex-row items-center gap-4 transition-all duration-700 ease-out ${
+              mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+            style={{ transitionDelay: mounted ? "300ms" : "0ms" }}
+          >
+            <a
+              href="#projects"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="group inline-flex items-center gap-2 px-5 py-2.5 text-base rounded-lg bg-accent-1 text-space-void font-semibold hover:bg-accent-1/90 transition-all duration-200 shadow-[0_0_25px_-5px_rgba(56,189,248,0.5)] hover:shadow-[0_0_35px_-5px_rgba(56,189,248,0.7)]"
+            >
+              View Projects
+              <ArrowRight size={18} className="transition-transform duration-200 group-hover:translate-x-1" />
+            </a>
+            <a
+              href="#experience"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="inline-flex items-center gap-2 px-5 py-2.5 text-base rounded-lg border-2 border-accent-1/50 text-accent-1 font-semibold hover:bg-accent-1/10 hover:border-accent-1 transition-all duration-200"
+            >
+              Work Experience
+            </a>
+            <a
+              href="https://github.com/DaltonCB"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View Dalton Babbs' GitHub profile"
+              className="inline-flex items-center gap-2 px-5 py-2.5 text-base rounded-lg border-2 border-accent-1/50 text-accent-1 font-semibold hover:bg-accent-1/10 hover:border-accent-1 transition-all duration-200"
+            >
+              <Github size={18} />
+              GitHub ↗
+            </a>
+          </div>
         </div>
 
         {/* Right Column: Profile picture */}
@@ -49,16 +88,19 @@ export default function Hero() {
           }`}
           style={{ transitionDelay: mounted ? "300ms" : "0ms" }}
         >
-          <div className="relative w-56 h-80 sm:w-64 sm:h-96 md:w-72 md:h-[28rem] rounded-full overflow-hidden shadow-2xl border-4 border-white/20 hover:border-accent-2/50 transition-all duration-300">
-            <Image
-              src="/profile-photo.jpg"
-              alt="Dalton Babbs"
-              fill
-              sizes="(max-width: 768px) 224px, 288px"
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-accent-2/20 to-accent-1/20 hover:from-accent-2/30 hover:to-accent-1/30 transition-all duration-300"></div>
+          <div className="relative">
+            <div className="absolute -inset-6 rounded-full bg-accent-1/20 blur-2xl"></div>
+            <div className="relative w-56 h-80 sm:w-64 sm:h-96 md:w-72 md:h-[28rem] rounded-full overflow-hidden shadow-[0_0_45px_-5px_rgba(56,189,248,0.4)] border-4 border-white/20 hover:border-accent-1/50 hover:shadow-[0_0_65px_-5px_rgba(56,189,248,0.6)] transition-all duration-300">
+              <Image
+                src="/profile-photo.jpg"
+                alt="Dalton Babbs"
+                fill
+                sizes="(max-width: 768px) 224px, 288px"
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-accent-1/10 to-accent-1/25 hover:from-accent-1/20 hover:to-accent-1/35 transition-all duration-300"></div>
+            </div>
           </div>
         </div>
       </div>

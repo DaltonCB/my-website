@@ -12,9 +12,9 @@
   --font-mono: var(--font-geist-mono);
 
   /* Deep Cosmos & Starlight palette */
-  --color-space-void: #050814;
-  --color-nebula: #0e172a;
-  --color-nebula-light: #16213a;
+  --color-space-void: #02040a;
+  --color-nebula: #0a1120;
+  --color-nebula-light: #131d33;
   --color-accent-1: #38bdf8;
   --color-accent-2: #818cf8;
 }
