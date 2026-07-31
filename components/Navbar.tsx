@@ -36,7 +36,7 @@ export default function Navbar() {
             <a
               key={link.id}
               href={`#${link.id}`}
-              className="px-3 sm:px-4 py-2 rounded-lg text-sm font-medium text-accent-1 bg-accent-1/10 border border-accent-1/20 hover:bg-accent-1/20 hover:border-accent-1/40 hover:text-white transition-all duration-200 whitespace-nowrap"
+              className="relative px-3 sm:px-4 py-2 text-sm font-medium text-[#94A3B8] hover:text-white transition-colors duration-200 whitespace-nowrap hover:[text-shadow:0_0_8px_rgba(56,189,248,0.7)] after:content-[''] after:absolute after:left-3 after:right-3 after:bottom-1 after:h-px after:bg-accent-1 after:scale-x-0 after:origin-left after:transition-transform after:duration-200 hover:after:scale-x-100"
               onClick={(e) => {
                 e.preventDefault();
                 scrollTo(link.id);

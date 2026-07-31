@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { Github, ArrowRight } from "lucide-react";
+import { Github, ArrowRight, ArrowUpRight } from "lucide-react";
 import RotatingRoles from "./RotatingRoles";
 
 export default function Hero() {
@@ -53,7 +53,7 @@ export default function Hero() {
                 e.preventDefault();
                 document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="group inline-flex items-center gap-2 px-5 py-2.5 text-base rounded-lg bg-accent-1 text-space-void font-semibold hover:bg-accent-1/90 transition-all duration-200 shadow-[0_0_25px_-5px_rgba(56,189,248,0.5)] hover:shadow-[0_0_35px_-5px_rgba(56,189,248,0.7)]"
+              className="group inline-flex h-11 items-center justify-center gap-2 px-5 text-base leading-none rounded-lg bg-accent-1 text-space-void font-semibold hover:bg-accent-1/90 transition-all duration-200 shadow-[0_0_25px_-5px_rgba(56,189,248,0.5)] hover:shadow-[0_0_35px_-5px_rgba(56,189,248,0.7)]"
             >
               View Projects
               <ArrowRight size={18} className="transition-transform duration-200 group-hover:translate-x-1" />
@@ -64,7 +64,7 @@ export default function Hero() {
                 e.preventDefault();
                 document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-base rounded-lg border-2 border-accent-1/50 text-accent-1 font-semibold hover:bg-accent-1/10 hover:border-accent-1 transition-all duration-200"
+              className="inline-flex h-11 items-center justify-center gap-2 px-5 text-base leading-none rounded-lg border-2 border-accent-1/50 text-accent-1 font-semibold hover:bg-accent-1/10 hover:border-accent-1 transition-all duration-200"
             >
               Work Experience
             </a>
@@ -73,10 +73,11 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="View Dalton Babbs' GitHub profile"
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-base rounded-lg border-2 border-accent-1/50 text-accent-1 font-semibold hover:bg-accent-1/10 hover:border-accent-1 transition-all duration-200"
+              className="inline-flex h-11 items-center justify-center gap-2 px-5 text-base leading-none rounded-lg border-2 border-accent-1/50 text-accent-1 font-semibold hover:bg-accent-1/10 hover:border-accent-1 transition-all duration-200"
             >
               <Github size={18} />
-              GitHub ↗
+              GitHub
+              <ArrowUpRight size={18} />
             </a>
           </div>
         </div>
