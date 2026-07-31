@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import { GraduationCap, Briefcase, Code2, Dumbbell } from "lucide-react";
 
@@ -65,32 +64,9 @@ function AboutCard({ item, index }: { item: AboutItem; index: number }) {
 
 export default function About() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation(0.3);
-  const { ref: photoRef, isVisible: photoVisible } = useScrollAnimation(0.2);
 
   return (
-    <section id="about" className="w-full max-w-6xl mx-auto px-4 pt-2 pb-8">
-      {/* Profile Photo Section */}
-      <div 
-        ref={photoRef}
-        className={`text-center mb-2 transition-all duration-700 ${
-          photoVisible 
-            ? 'opacity-100 transform translate-y-0' 
-            : 'opacity-0 transform translate-y-8'
-        }`}
-      >
-        <div className="relative inline-block">
-          <Image
-            src="/profile-photo.jpg" // Place your photo in the public folder with this name
-            alt="Dalton Babbs"
-            width={200}
-            height={200}
-            className="rounded-full mx-auto shadow-2xl border-4 border-white/20 hover:border-indigo-400/50 transition-all duration-300"
-            priority
-          />
-          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-indigo-500/20 to-purple-500/20 hover:from-indigo-500/30 hover:to-purple-500/30 transition-all duration-300"></div>
-        </div>
-      </div>
-      
+    <section id="about" className="w-full max-w-6xl mx-auto px-4 pt-16 pb-8 sm:pt-24">
       <div 
         ref={headerRef}
         className={`text-center mb-8 transition-all duration-700 ${

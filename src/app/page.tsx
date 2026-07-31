@@ -1,3 +1,4 @@
+import Navbar from "../../components/Navbar";
 import Hero from "../../components/Hero";
 import About from "../../components/About";
 import WorkExperience from "../../components/WorkExperience";
@@ -16,6 +17,8 @@ export default function Home() {
           backgroundImage: 'radial-gradient(circle at 2px 2px, rgb(148 163 184) 1px, transparent 0)'
         }}></div>
       </div>
+      
+      <Navbar />
       
       {/* Main content sections */}
       <div className="relative z-10 w-full">
