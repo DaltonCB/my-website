@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-import { Github } from "lucide-react";
+import { Github, TrendingUp, ExternalLink } from "lucide-react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 // components/Projects.tsx
@@ -40,23 +39,22 @@ const projects: Project[] = [
     ]
   },
   {
-    title: "Explorio",
-    description: "A mobile application designed to generate detailed vacation itineraries based on user preferences, leveraging location APIs and Firebase for secure data management.",
+    title: "Stock Watch",
+    description: "A stock analysis dashboard that visualizes intraday-derived daily low/high price averages and volume for a given stock over the last month in both a graph and table format.",
     detailedDescription: [
-      "Worked on frontend implementation using Flutter, allowing for easy and clear user interaction with the application",
-      "Engineered backend functionalities using Flutter and Firebase, facilitating data storage along with extensive security and scalability",
-      "Leveraged the Google Places API to dynamically source authentic locations, crafting personalized trip itineraries tailored to user preferences and interests",
-      "Designed multi-factor authentication for the application and worked on data storage in Firebase, increasing security and improving reliability"
+      "Built an ASP.NET Core (.NET 8) Web API backend that pulls 15-minute intraday stock data and aggregates it into daily low/high price averages and volume",
+      "Developed a React + TypeScript (Vite) frontend styled with Tailwind CSS, visualizing the aggregated data in both graph and table formats using Recharts",
+      "Configured the frontend dev server to proxy API requests to the backend, with CORS restricted to the local frontend origin",
+      "Designed the backend to consume Yahoo Finance's chart data with an architecture built to support swapping in additional data source integrations in the future"
     ],
-    image: "/explorio-logo.png",
-    link: "#",
-    technologies: ["Flutter", "Firebase", "Google Places API", "Dart"],
+    link: "https://github.com/DaltonCB/stock-watch",
+    technologies: ["ASP.NET Core (.NET 8)", "React", "TypeScript", "Vite", "Tailwind CSS", "Recharts"],
     features: [
-      "Personalized trip itinerary generation",
-      "Google Places API integration for authentic locations",
-      "Multi-factor authentication system",
-      "Firebase backend with secure data storage",
-      "Cross-platform mobile compatibility"
+      "Aggregates 15-minute intraday market data into daily price averages and volume metrics",
+      "Interactive dual-view visualizations (graphs & tables) built with Recharts",
+      "RESTful .NET 8 Web API documented and tested via Swagger OpenAPI",
+      "Symbol search with sensible defaults",
+      "Proxy-configured frontend for seamless local development"
     ]
   },
   {
@@ -79,46 +77,37 @@ const projects: Project[] = [
       "Clean, professional layout"
     ]
   },
+  {
+    title: "Explorio",
+    description: "A mobile application designed to generate detailed vacation itineraries based on user preferences, leveraging location APIs and Firebase for secure data management.",
+    detailedDescription: [
+      "Worked on frontend implementation using Flutter, allowing for easy and clear user interaction with the application",
+      "Engineered backend functionalities using Flutter and Firebase, facilitating data storage along with extensive security and scalability",
+      "Leveraged the Google Places API to dynamically source authentic locations, crafting personalized trip itineraries tailored to user preferences and interests",
+      "Designed multi-factor authentication for the application and worked on data storage in Firebase, increasing security and improving reliability"
+    ],
+    image: "/explorio-logo.png",
+    link: "#",
+    technologies: ["Flutter", "Firebase", "Google Places API", "Dart"],
+    features: [
+      "Personalized trip itinerary generation",
+      "Google Places API integration for authentic locations",
+      "Multi-factor authentication system",
+      "Firebase backend with secure data storage",
+      "Cross-platform mobile compatibility"
+    ]
+  },
 ];
-
-function GitHubRepoCard({ project, index }: { project: Project; index: number }) {
-  const { ref, isVisible } = useScrollAnimation(0.2);
-  
-  return (
-    <div 
-      ref={ref}
-      onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}
-      className={`bg-nebula/50 rounded-xl shadow-lg p-6 flex items-center justify-center hover:bg-nebula-light/50 transition-all duration-700 hover:scale-105 border-l-4 border-accent-1 cursor-pointer min-h-[120px] ${
-        isVisible 
-          ? 'opacity-100 transform translate-y-0' 
-          : 'opacity-0 transform translate-y-8'
-      }`}
-      style={{ 
-        transitionDelay: `${index * 150}ms` 
-      }}
-    >
-      <div className="text-center">
-        <div className="flex items-center justify-center gap-3 mb-2">
-          <Github size={24} className="text-accent-1" />
-          <h3 className="text-lg font-semibold text-white">GitHub Repository</h3>
-        </div>
-        <p className="text-slate-300 text-sm mb-3">View the source code for this project</p>
-        <span className="text-accent-1 font-medium text-sm">
-          GitHub Repo Link →
-        </span>
-      </div>
-    </div>
-  );
-}
 
 function ProjectCard({ project, index, onProjectClick }: { project: Project; index: number; onProjectClick: (project: Project) => void }) {
   const { ref, isVisible } = useScrollAnimation(0.2);
+  const hasRepoLink = Boolean(project.link && project.link !== "#");
   
   return (
     <div 
       ref={ref}
       onClick={() => onProjectClick(project)}
-      className={`bg-nebula rounded-xl shadow-lg p-6 flex flex-col hover:bg-nebula-light transition-all duration-700 hover:scale-105 border-l-4 border-accent-1 hover:shadow-[0_0_25px_-5px_rgba(56,189,248,0.5)] cursor-pointer h-[650px] ${
+      className={`group bg-nebula rounded-xl shadow-lg p-6 flex flex-col hover:bg-nebula-light transition-all duration-700 hover:scale-105 border-l-4 border-accent-1 hover:shadow-[0_0_25px_-5px_rgba(56,189,248,0.5)] cursor-pointer h-full ${
         isVisible 
           ? 'opacity-100 transform translate-y-0' 
           : 'opacity-0 transform translate-y-8'
@@ -127,7 +116,11 @@ function ProjectCard({ project, index, onProjectClick }: { project: Project; ind
         transitionDelay: `${index * 150}ms` 
       }}
     >
-      {project.image && (
+      {project.title === "Stock Watch" ? (
+        <div className="w-16 h-16 mb-4 mx-auto rounded-full bg-nebula-light flex items-center justify-center shadow-md">
+          <TrendingUp size={28} className="text-accent-1" />
+        </div>
+      ) : project.image && (
         <>
           <img 
             src={project.image} 
@@ -191,9 +184,25 @@ function ProjectCard({ project, index, onProjectClick }: { project: Project; ind
         </div>
       )}
       
-      <div className="mt-auto pt-4 text-center">
-        <span className="text-accent-1 font-medium text-sm">
-          Click to view details
+      <div className="mt-auto pt-4 border-t border-white/10 flex items-center justify-between">
+        {hasRepoLink ? (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="inline-flex items-center gap-1.5 text-accent-1 hover:text-white transition-colors text-sm font-medium"
+          >
+            <Github size={16} />
+            GitHub Repo
+            <ExternalLink size={13} />
+          </a>
+        ) : (
+          <span />
+        )}
+        <span className="inline-flex items-center gap-1 text-accent-1 font-medium text-sm px-3 py-1.5 rounded-full border border-accent-1/40 bg-accent-1/10 transition-all duration-200 group-hover:bg-accent-1/25 group-hover:text-white group-hover:border-accent-1/60 group-hover:shadow-[0_0_15px_-3px_rgba(56,189,248,0.6)]">
+          Details
+          <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
         </span>
       </div>
     </div>
@@ -216,13 +225,17 @@ function ProjectModal({ project, isOpen, onClose }: { project: Project | null; i
           {/* Header with close button */}
           <div className="flex justify-between items-start mb-6">
             <div className="flex items-center gap-4">
-              {project.image && (
-                <Image 
+              {project.title === "Stock Watch" ? (
+                <div className="w-12 h-12 rounded-full bg-nebula-light flex items-center justify-center shadow-md">
+                  <TrendingUp size={22} className="text-accent-1" />
+                </div>
+              ) : project.image && (
+                <img 
                   src={project.image} 
                   alt={project.title} 
                   width={48}
                   height={48}
-                  className={`w-12 h-12 ${
+                  className={`w-12 h-12 object-contain ${
                     project.title === "Personal Portfolio Website" 
                       ? "filter brightness-0 saturate-100 invert-0 sepia-1 hue-rotate-180 brightness-2 contrast-1" 
                       : ""
@@ -261,7 +274,7 @@ function ProjectModal({ project, isOpen, onClose }: { project: Project | null; i
           </div>
           
           {/* Project Link */}
-          {(project.title === "Personal Portfolio Website" || project.title === "EdVenture Study Abroad") && (
+          {project.link && project.link !== "#" && (
             <div className="mb-6">
               <h3 className="text-xl font-semibold text-white mb-3">Project Link</h3>
               <a 
@@ -331,16 +344,9 @@ export default function Projects() {
         </p>
       </div>
       
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 md:grid-cols-2 items-stretch">
         {projects.map((project, index) => (
-          <div key={index}>
-            <ProjectCard project={project} index={index} onProjectClick={handleProjectClick} />
-            {(project.title === "Personal Portfolio Website" || project.title === "EdVenture Study Abroad") && (
-              <div className="mt-4">
-                <GitHubRepoCard project={project} index={index + 1} />
-              </div>
-            )}
-          </div>
+          <ProjectCard key={index} project={project} index={index} onProjectClick={handleProjectClick} />
         ))}
       </div>
       

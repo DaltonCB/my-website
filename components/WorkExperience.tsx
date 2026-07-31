@@ -16,7 +16,7 @@ const workExperiences: WorkExperience[] = [
     company: "UPS, Inc",
     duration: "June 2025 - Present",
     description: "",
-    technologies: [".NET MAUI", "C#", "XAML", "SQL", "Android", "Agile Scrum"]
+    technologies: [".NET MAUI", "C#", "XAML", "SQL", "Android", "Angular", "Agile Scrum"]
   },
 ];
 
