@@ -1,5 +1,6 @@
 import Navbar from "../../components/Navbar";
 import CursorGlow from "../../components/CursorGlow";
+import ParticleCanvas from "../../components/ParticleCanvas";
 import Hero from "../../components/Hero";
 import About from "../../components/About";
 import WorkExperience from "../../components/WorkExperience";
@@ -20,6 +21,7 @@ export default function Home() {
       </div>
       
       <CursorGlow />
+      <ParticleCanvas />
       
       <Navbar />
       
