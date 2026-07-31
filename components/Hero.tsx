@@ -9,7 +9,7 @@ export default function Hero() {
         {/* Left Column: Title, subtitle, buttons */}
         <div className="flex flex-col items-center text-center md:items-start md:text-left order-2 md:order-1">
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 text-white tracking-tight">
-            Hello, I&apos;m <span className="text-cyan-400">Dalton Babbs</span>.
+            Hello, I&apos;m <span className="text-sky-400">Dalton Babbs</span>.
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed">
             I am a Software Engineer with hands-on experience as a Software Development Co-op at UPS, building applications for 30,000+ drivers nationwide. Passionate about creating impactful software solutions.
@@ -27,7 +27,7 @@ export default function Hero() {
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-indigo-500/20 to-purple-500/20 hover:from-indigo-500/30 hover:to-purple-500/30 transition-all duration-300"></div>
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-indigo-400/20 to-sky-400/20 hover:from-indigo-400/30 hover:to-sky-400/30 transition-all duration-300"></div>
           </div>
         </div>
       </div>

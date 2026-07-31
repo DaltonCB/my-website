@@ -38,7 +38,7 @@ function AboutCard({ item, index }: { item: AboutItem; index: number }) {
   return (
     <div 
       ref={ref}
-      className={`bg-slate-800 rounded-xl shadow-lg p-8 hover:bg-slate-700 transition-all duration-700 border-l-4 border-cyan-400 ${
+      className={`bg-slate-800 rounded-xl shadow-lg p-8 hover:bg-slate-700 transition-all duration-700 border-l-4 border-sky-400 ${
         isVisible 
           ? 'opacity-100 transform translate-y-0' 
           : 'opacity-0 transform translate-y-8'
@@ -49,8 +49,8 @@ function AboutCard({ item, index }: { item: AboutItem; index: number }) {
     >
       <div className="flex flex-col md:flex-row md:items-start gap-6">
         <div className="flex-shrink-0 mx-auto md:mx-0">
-          <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center">
-            <item.icon className="w-8 h-8 text-cyan-400" />
+          <div className="w-16 h-16 bg-sky-500/20 rounded-full flex items-center justify-center">
+            <item.icon className="w-8 h-8 text-sky-400" />
           </div>
         </div>
         <div className="text-center md:text-left">
@@ -76,7 +76,7 @@ export default function About() {
         }`}
       >
         <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white">
-          About <span className="text-cyan-400">Me</span>
+          About <span className="text-sky-400">Me</span>
         </h2>
         <p className="text-lg text-slate-300 max-w-2xl mx-auto">
           Software Engineer and Computer Science graduate with hands-on experience in agile software development and a passion for creating impactful applications.
